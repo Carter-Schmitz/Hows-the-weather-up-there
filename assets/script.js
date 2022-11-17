@@ -148,10 +148,10 @@ $(document).on("click", ".list-group-item", function() {
 $(document).ready(function() {
     var searchHistoryArr = JSON.parse(localStorage.getItem("city"));
 
-    if (searchHistoryArr !== null) {
-        var lastSearchedIndex = searchHistoryArr.length - 1;
-        var lastSearchedCity = searchHistoryArr[lastSearchedIndex];
-        currentCondition(lastSearchedCity);
-        console.log(`Last searched city: ${lastSearchedCity}`);
+    for (let index = 0; index < searchHistoryArr.length; index++) {
+        const searchedCity = $(`
+        <li class="list-group-item">${searchHistoryArr[index]}</li>
+        `);
+        $("#searchHistory").append(searchedCity);
     }
 });
