@@ -155,3 +155,8 @@ $(document).ready(function() {
         $("#searchHistory").append(searchedCity);
     }
 });
+
+$("#clearBtn").on("click", function() {
+    localStorage.clear();
+    $(".list-group-item").remove();
+});
